@@ -4,7 +4,7 @@
   "use strict";
 
   // Getting the existing module
-  angular.module("appTrips2")
+  angular.module("app-trips")
     .controller("tripsController", tripsController);
 
   function tripsController($http) {
@@ -49,9 +49,6 @@
         });
 
     };
-
-
-
   }
 
 })();

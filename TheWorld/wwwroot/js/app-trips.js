@@ -3,10 +3,9 @@
   "use strict";
 
   // Creating the Module
-  angular.module("appTrips2", ["simpleControls", "ngRoute"])
+  angular.module("app-trips", ["simpleControls", "ngRoute"])
     .config(function ($routeProvider) {
-      var x = "thing";
-
+      
       $routeProvider.when("/", {
         controller: "tripsController",
         controllerAs: "vm",

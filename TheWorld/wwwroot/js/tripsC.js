@@ -4,7 +4,7 @@
   "use strict";
 
   // Getting the existing module
-  angular.module("trips")
+  angular.module("app-trips")
     .controller("tripsC", tripsC);
 
   function tripsC($http) {

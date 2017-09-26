@@ -8,7 +8,7 @@
     .config(function ($routeProvider) {
 
     $routeProvider.when("/", {
-      controller: "tripsController",
+      controller: "tripsC",
       controllerAs: "vm",
       templateUrl: "/views/tripsView.html"
     });

@@ -1,4 +1,5 @@
-﻿(function () {
+﻿// app-trips.js
+(function () {
 
   "use strict";
 

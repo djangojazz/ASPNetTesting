@@ -10,7 +10,7 @@ namespace Locations.Tests.DataAccess
   public class BusinessContextTests
   {
     [TestMethod]
-    public void CanGenerateSeeding()
+    public void GenerateSeeding()
     {
       //Assign
       List<Business> businesses = new List<Business>();
@@ -18,7 +18,16 @@ namespace Locations.Tests.DataAccess
       //Act
       using (var context = new BusinessesContext())
       {
+        //if(context.Business.Any())
+        //{
+        //  context.ClearRange(context.Business);
+        //  context.SaveChanges();
+        //  businesses = BusinessDbInitializer.GetSeedingBusinesses().ToList();
+        //}
+        //else
+        //{
         businesses = context.Business.ToList();
+        //}
       }
 
       //Assert

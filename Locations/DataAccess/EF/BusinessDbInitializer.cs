@@ -12,12 +12,16 @@ namespace Locations.DataAccess.EF
       {
           new Business
           {
-            BusinessName = "Home",
+            BusinessName = "Thriftway",
             Locations = new List<Location>
             {
               new Location
               {
-                LocationName = "Home",
+                LocationName = "Bales Garden Home",
+                Address = "7680 SW Garden Home Rd.",
+                City = "Portland",
+                State = "OR",
+                Zip = 97223,
                 Latitude = 1,
                 Longitude = 1,
                 Orders = new List<Order>
@@ -35,6 +39,10 @@ namespace Locations.DataAccess.EF
               new Location
               {
                 LocationName = "SW 99",
+                Address = "8900 SW 99th",
+                City = "Portland",
+                State = "OR",
+                Zip = 97223,
                 Latitude = 2,
                 Longitude = 2,
                 Orders = new List<Order>

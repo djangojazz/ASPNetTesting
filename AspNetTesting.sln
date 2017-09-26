@@ -1,9 +1,10 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26114.2
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheWorld", "TheWorld\TheWorld.csproj", "{05250E7C-AF00-4FE3-8E37-CB104099F475}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheWorld", "TheWorld\TheWorld.csproj", "{05250E7C-AF00-4FE3-8E37-CB104099F475}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetLocations", "AspNetLocations\AspNetLocations.csproj", "{8660E498-FA8E-406F-80E7-CD42ADF8621E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +16,15 @@ Global
 		{05250E7C-AF00-4FE3-8E37-CB104099F475}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05250E7C-AF00-4FE3-8E37-CB104099F475}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05250E7C-AF00-4FE3-8E37-CB104099F475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8660E498-FA8E-406F-80E7-CD42ADF8621E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8660E498-FA8E-406F-80E7-CD42ADF8621E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8660E498-FA8E-406F-80E7-CD42ADF8621E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8660E498-FA8E-406F-80E7-CD42ADF8621E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E3C1C46-7D3D-4197-970B-E270B6CC41C9}
 	EndGlobalSection
 EndGlobal

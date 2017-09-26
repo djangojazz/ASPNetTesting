@@ -2,7 +2,7 @@
 (function () {
 
   //var ele = $("#username");
-  //ele.text("Shawn Wildermuth");
+  //ele.text("Brett Morin");
 
   //var main = $("#main");
   //main.on("mouseenter", function () {

@@ -149,7 +149,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DataAccess\EF\LocationsContext.cs" />
+    <Compile Include="DataAccess\EF\BusinessDbInitializer.cs" />
+    <Compile Include="DataAccess\EF\BusinessesContext.cs" />
     <Compile Include="DataAccess\EF\Models\BaseModel.cs" />
     <Compile Include="DataAccess\EF\Models\Business.cs" />
     <Compile Include="DataAccess\EF\Models\Location.cs" />

@@ -149,6 +149,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DataAccess\EF\LocationsContext.cs" />
+    <Compile Include="DataAccess\EF\Models\BaseModel.cs" />
+    <Compile Include="DataAccess\EF\Models\Business.cs" />
+    <Compile Include="DataAccess\EF\Models\Location.cs" />
+    <Compile Include="DataAccess\EF\Models\Order.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -194,7 +199,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DataAccess\EF\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

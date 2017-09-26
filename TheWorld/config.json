@@ -1,0 +1,11 @@
+{
+  "MailSettings": {
+    "ToAddress": "brett@theworld.com"
+  },
+  "ConnectionStrings": {
+    "WorldContextConnection": "Server=.;Database=TheWorld;Trusted_Connection=true;MultipleActiveResultSets=true;"
+  },
+  "Keys": {
+    "BingKey": "DONTEVERPUTKEYSINSOURCECONTROL"
+  }
+}

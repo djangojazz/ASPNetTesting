@@ -40,6 +40,17 @@ namespace TheWorld
     // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services)
     {
+      services.AddMvc(config =>
+      {
+        if (_env.IsProduction())
+        {
+          //config.Filters.Add(new RequireHttpsAttribute());
+        }
+      }).AddJsonOptions(config =>
+      {
+        config.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+      });
+
       services.AddSingleton(_config);
 
       if (_env.IsEnvironment("Development") || _env.IsEnvironment("Testing"))
@@ -48,21 +59,24 @@ namespace TheWorld
       }
       else
       {
-        // Implement a real Mail Service
+        //Implement a real service
+        services.AddScoped<IMailService, DebugMailService>();
       }
 
       services.AddDbContext<WorldContext>();
-
+      services.AddScoped<IWorldRepository, WorldRepository>();
+      services.AddTransient<GeoCoordsService>();
+      services.AddTransient<WorldContextSeedData>();
       services.AddIdentity<WorldUser, IdentityRole>(config =>
       {
         config.User.RequireUniqueEmail = true;
-        config.Cookies.ApplicationCookie.LoginPath = "/auth/login";
-        config.Cookies.ApplicationCookie.Events = new CookieAuthenticationEvents()
+        config.Password.RequiredLength = 8;
+        config.Cookies.ApplicationCookie.LoginPath = "/Auth/Login";
+        config.Cookies.ApplicationCookie.Events = new CookieAuthenticationEvents
         {
           OnRedirectToLogin = async ctx =>
           {
-            if (ctx.Request.Path.StartsWithSegments("/api") && 
-              ctx.Response.StatusCode == 200)
+            if (ctx.Request.Path.StartsWithSegments("/api") && ctx.Response.StatusCode == 200)
             {
               ctx.Response.StatusCode = 401;
             }
@@ -76,33 +90,19 @@ namespace TheWorld
       })
       .AddEntityFrameworkStores<WorldContext>();
 
-      services.AddScoped<IWorldRepository, WorldRepository>();
-
-      services.AddTransient<GeoCoordsService>();
-
-      services.AddTransient<WorldContextSeedData>();
-
       services.AddLogging();
 
-      services.AddMvc(config =>
-      {
-        if (_env.IsProduction())
-        {
-          config.Filters.Add(new RequireHttpsAttribute());
-        }
-      })
-      .AddJsonOptions(config =>
-      {
-        config.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-      });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, 
+    public void Configure(IApplicationBuilder app,
       IHostingEnvironment env,
       WorldContextSeedData seeder,
       ILoggerFactory factory)
     {
+      app.UseStaticFiles();
+      app.UseIdentity();
+
       Mapper.Initialize(config =>
       {
         config.CreateMap<TripViewModel, Trip>().ReverseMap();
@@ -119,9 +119,6 @@ namespace TheWorld
         factory.AddDebug(LogLevel.Error);
       }
 
-      app.UseStaticFiles();
-
-      app.UseIdentity();
 
       app.UseMvc(config =>
       {

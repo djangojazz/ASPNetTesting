@@ -1,11 +1,11 @@
-// app-trips.js
-(function () {
+﻿(function () {
 
   "use strict";
 
   // Creating the Module
-  angular.module("app-trips", ["simpleControls", "ngRoute"])
+  angular.module("appTrips2", ["simpleControls", "ngRoute"])
     .config(function ($routeProvider) {
+      var x = "thing";
 
       $routeProvider.when("/", {
         controller: "tripsController",
@@ -13,7 +13,7 @@
         templateUrl: "/views/tripsView.html"
       });
 
-      $routeProvider.otherwise({ redirectTo: "/"});
+      $routeProvider.otherwise({ redirectTo: "/" });
 
     });
 

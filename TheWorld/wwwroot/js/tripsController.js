@@ -4,7 +4,7 @@
   "use strict";
 
   // Getting the existing module
-  angular.module("app-trips")
+  angular.module("appTrips2")
     .controller("tripsController", tripsController);
 
   function tripsController($http) {

@@ -1,13 +1,13 @@
-﻿// tripsC.js
+﻿// tripsController.js
 (function () {
 
   "use strict";
 
   // Getting the existing module
   angular.module("app-trips")
-    .controller("tripsC", tripsC);
+    .controller("tripsController", tripsController);
 
-  function tripsC($http) {
+  function tripsController($http) {
 
     var vm = this;
 
